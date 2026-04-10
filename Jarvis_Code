@@ -130,3 +130,20 @@ if __name__ == "__main__":
 
         except Exception as e:
             print("Error:", e)
+
+### The Below code can de used instead of gemini:-
+
+from openai import OpenAI
+
+client = OpenAI(api_key="Api_Key")
+
+completion = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "system", "content": "You are a poetic assistant."},
+        {"role": "user", "content": "Explain recursion in a poem."}
+    ]
+)
+
+print(completion.choices[0].message.content)
+###
